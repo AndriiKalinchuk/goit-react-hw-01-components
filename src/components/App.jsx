@@ -7,7 +7,6 @@ import data from './Statistics/data.json';
 import friends from './FriendList/friends.json';
 import transactions from './TransactionHistory/transactions.json';
 
-import { GlobalStyle } from 'GlobalStyle';
 import { Box } from './Box';
 
 export default function App() {
