@@ -7,9 +7,17 @@ import data from './Statistics/data.json';
 import friends from './FriendList/friends.json';
 import transactions from './TransactionHistory/transactions.json';
 
+import { GlobalStyle } from 'GlobalStyle';
+import { Box } from './Box';
+
 export default function App() {
   return (
-    <div>
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="space-between"
+    >
       <Profile
         username={user.username}
         tag={user.tag}
@@ -20,6 +28,6 @@ export default function App() {
       <Statistics title="Upload stats" stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
-    </div>
+    </Box>
   );
 }

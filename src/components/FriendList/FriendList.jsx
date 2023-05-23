@@ -1,25 +1,32 @@
 import { HiStatusOnline, HiStatusOffline } from 'react-icons/hi';
 import PropTypes from 'prop-types';
+import {
+  FriendsList,
+  FriendItem,
+  Status,
+  Image,
+  Name,
+} from './FriendList.styled';
 
 export default function FriendList({ friends }) {
   return (
-    <ul className="friendlist">
+    <FriendsList>
       {friends !== undefined ? (
         friends.map(({ id, isOnline, avatar, name }) => (
-          <li className="item" key={id}>
-            <span className="status">
+          <FriendItem key={id}>
+            <Status>
               {isOnline ? <HiStatusOnline /> : <HiStatusOffline />}
-            </span>
-            <img className="avatar" src={avatar} alt={name} width="48" />
-            <p className="name">{name}</p>
-          </li>
+            </Status>
+            <Image src={avatar} alt={name} width="48" />
+            <Name>{name}</Name>
+          </FriendItem>
         ))
       ) : (
-        <li className="item">
+        <FriendItem>
           <p>No friends</p>
-        </li>
+        </FriendItem>
       )}
-    </ul>
+    </FriendsList>
   );
 }
 FriendList.propTypes = {
